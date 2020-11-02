@@ -1,0 +1,50 @@
+
+/*------------Header---------------*/
+.header {
+  background-color: blue;
+  padding-bottom: 10px;
+  padding-top:20px
+}
+
+.header  Container > Row > Col > h1 {
+  color:aliceblue;
+}
+
+.header > Link{
+  color:aliceblue;
+}
+
+/*----------Found page----------------*/
+
+.intro > h1 {
+  text-align: center;
+  color: orangered;
+}
+
+.intro > p {
+  text-align:center;
+  font-size: large;
+}
+
+/*-----------Item card-------------*/
+.card {
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px; 
+}
+ .card > h1 {
+  color:purple;
+ }
+
+ /*--------------Footer------------*/
+
+.foot {
+  background-color: blue;
+  padding-top: 40px;
+}
+
+.foot > p {
+  text-align: center;
+  color: pink; 
+  
+}
