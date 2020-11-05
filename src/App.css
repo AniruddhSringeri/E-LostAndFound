@@ -1,4 +1,6 @@
-
+body{
+  min-height: 100%;
+}
 /*------------Header---------------*/
 .header {
   background-color: blue;

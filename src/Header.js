@@ -20,11 +20,19 @@ function Header() {
                         <NavItem>
                         <NavLink href="/" style = {{color:"white"}}>Home</NavLink>
                         </NavItem>
+                        {
+                        // <NavItem>
+                        // <NavLink href="/lost" style = {{color:"white"}}>Lost</NavLink>
+                        // </NavItem>
+                        // <NavItem>
+                        // <NavLink href="/found" style = {{color:"white"}}>Found</NavLink>
+                        // </NavItem>
+                        }           
                         <NavItem>
-                        <NavLink href="/lost" style = {{color:"white"}}>Lost</NavLink>
+                        <NavLink href="/login" style = {{color:"white"}}>Login</NavLink>
                         </NavItem>
                         <NavItem>
-                        <NavLink href="/found" style = {{color:"white"}}>Found</NavLink>
+                        <NavLink href="/signup" style = {{color:"white"}}>Signup</NavLink>
                         </NavItem>
                     </Nav>
                     </Col>
