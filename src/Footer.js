@@ -1,9 +1,56 @@
 import React from "react"
-// import "./Footer.css"
+import {Link} from "react-router-dom"
+import {Container, Row, Col} from "reactstrap"
+import { Nav, NavItem, NavLink } from 'reactstrap'
 function Footer() {
     return (
         <footer className = "foot">
-            <h1>This is a beatiful footer</h1>
+        <Container>
+        <Row>
+
+            <Col>
+            <h4>Useful Links</h4>
+            <ul>
+              <li> <a href="#">Home</a></li>
+              <li> <a href="#">About us</a></li>
+              <li> <a href="#">Services</a></li>
+              
+            </ul>
+            </Col>
+
+            <Col>
+                <h4>Our Services</h4>
+                <ul>
+                <li> <a href="#">Admission</a></li>
+                <li> <a href="#">Campus Portal</a></li>
+                <li> <a href="#">Management</a></li>
+                <li> <a href="#">Department</a></li>
+                <li> <a href="#">COE</a></li>
+                </ul>
+            </Col>
+
+          <Col>
+            <h4>Contact Us</h4>
+            <p>
+              B.M.S College of Engineering
+              Basavanagudi, Bangaluru    
+              <br></br>
+              <strong>Phone :</strong> +91 ****<br></br>
+              <strong>Email:</strong> xxxx@bmsce.ac.in
+            </p>
+        </Col>
+
+         <Col>
+            <h3>About E-Lost and Found</h3>
+            <p>An initiative to uphold the Human values like honesty and Caring.</p>
+           
+              
+            
+            </Col>
+
+          </Row>
+      </Container>
+        
         </footer>
     )
 }

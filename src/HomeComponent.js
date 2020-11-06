@@ -19,7 +19,7 @@ function HomeComponent() {
                           <Button color="primary" onClick={() => {history.push("/login")}}>Login</Button>
                         </ButtonGroup>
                     </div>
-                    <Row>
+                    <Row style={{alignItems: "center"}}>
                         <Col sm="3">
                           <Card body className="card">
                             <CardTitle tag="h5">Lost something?</CardTitle>
