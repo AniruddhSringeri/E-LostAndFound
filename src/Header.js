@@ -1,7 +1,7 @@
-import React from "react"
-import {Link} from "react-router-dom"
-import {Container, Row, Col} from "reactstrap"
-import { Nav, NavItem, NavLink } from 'reactstrap'
+import React from "react";
+import {Link} from "react-router-dom";
+import {Container, Row, Col} from "reactstrap";
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 function Header() {
     return (
@@ -12,13 +12,13 @@ function Header() {
                         <img src = "./logo.png" height = "100px" width = "100px" />
                     </Col>
                     <Col xl = "6">
-                        <h1 align = "center" style = {{color:"white", paddingTop:"1.4rem", fontFamily:"sans-serif", fontSize: "3rem"}}>E-Lost and found portal</h1>
+                        <h1 align = "center" style = {{color:"rgb(247, 227, 200)", paddingTop:"1.4rem", fontFamily:"sans-serif", fontSize: "4rem"}}>E-Lost and Found Portal</h1>
                     </Col>
 
                     <Col xl = "3" align = "right" paddingTop = "1rem" >
                     <Nav style = {{fontSize: "1.5em", color:"white", paddingTop:"2rem", paddingLeft:"4rem"}}>
                         <NavItem>
-                        <NavLink href="/" style = {{color:"white"}}>Home</NavLink>
+                        <NavLink href="/" style = {{color:"rgb(247, 227, 200)"}}>Home</NavLink>
                         </NavItem>
                         {
                         // <NavItem>
@@ -29,10 +29,10 @@ function Header() {
                         // </NavItem>
                         }           
                         <NavItem>
-                        <NavLink href="/login" style = {{color:"white"}}>Login</NavLink>
+                        <NavLink href="/login" style = {{color:"rgb(247, 227, 200)"}}>Login</NavLink>
                         </NavItem>
                         <NavItem>
-                        <NavLink href="/signup" style = {{color:"white"}}>Signup</NavLink>
+                        <NavLink href="/signup" style = {{color:"rgb(247, 227, 200)"}}>Signup</NavLink>
                         </NavItem>
                     </Nav>
                     </Col>
@@ -42,4 +42,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header;

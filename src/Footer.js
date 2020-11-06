@@ -1,56 +1,10 @@
 import React from "react"
-import {Link} from "react-router-dom"
-import {Container, Row, Col} from "reactstrap"
-import { Nav, NavItem, NavLink } from 'reactstrap'
+// import "./Footer.css"
 function Footer() {
     return (
         <footer className = "foot">
-        <Container>
-        <Row>
-
-            <Col>
-            <h4>Useful Links</h4>
-            <ul>
-              <li> <a href="#">Home</a></li>
-              <li> <a href="#">About us</a></li>
-              <li> <a href="#">Services</a></li>
-              
-            </ul>
-            </Col>
-
-            <Col>
-                <h4>Our Services</h4>
-                <ul>
-                <li> <a href="#">Admission</a></li>
-                <li> <a href="#">Campus Portal</a></li>
-                <li> <a href="#">Management</a></li>
-                <li> <a href="#">Department</a></li>
-                <li> <a href="#">COE</a></li>
-                </ul>
-            </Col>
-
-          <Col>
-            <h4>Contact Us</h4>
-            <p>
-              B.M.S College of Engineering
-              Basavanagudi, Bangaluru    
-              <br></br>
-              <strong>Phone :</strong> +91 ****<br></br>
-              <strong>Email:</strong> xxxx@bmsce.ac.in
-            </p>
-        </Col>
-
-         <Col>
-            <h3>About E-Lost and Found</h3>
-            <p>An initiative to uphold the Human values like honesty and Caring.</p>
-           
-              
-            
-            </Col>
-
-          </Row>
-      </Container>
-        
+            <h3>E-LostandFound is an initiative to uphold human values like honesty and caring.</h3>
+            <h6>Copyright © 2020 BMS College of Engineering. All Rights Reserved</h6>
         </footer>
     )
 }

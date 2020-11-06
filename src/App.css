@@ -8,7 +8,6 @@ body{
   background-color: blue;
   padding-bottom: 10px;
   padding-top:20px;
-  height: 12vh;
 }
 
 .header  Container > Row > Col > h1 {
@@ -43,17 +42,23 @@ body{
 
  /*--------------Footer------------*/
 
-.foot {
+/*.foot {
   background-color: rgb(163, 161, 157);
   padding-top: 10px;
   position: fixed;
   bottom: 0;
   width: 100%;
-}
+}*/
 
-.foot > h1 {
+.foot {
+  background-color: blue;
+  padding-top: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   color: pink; 
+  height: 6vh;
 }
 
 .card {
@@ -66,25 +71,16 @@ body{
 }
 
 .jumbotron {
-  height: 80vh;
+  height: 82vh;
+  background-image: url('bms_blur.jpg');
+  background-size: cover;
 }
 
 
-
-/*
-
-body{
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
+.modal-content {
+  width: 200%;
 }
 
-.foot {
-  background-color: rgb(163, 161, 157);
-  padding-top: 40px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+.fileUploader{
+  width: 53%;
 }
-
-*/

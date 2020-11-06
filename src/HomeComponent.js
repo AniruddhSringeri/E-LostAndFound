@@ -11,25 +11,25 @@ function HomeComponent() {
             <Jumbotron fluid className="jumbotron">
                 <Container fluid className="container">
                     <div className="welcome" style={{textAlign:"center"}}>
-                        <h1>Welcome!</h1>
-                        <h2>This is the place to find your lost item, or to report that you have found an item.</h2>
-                        <h3>First, login to your BMSCE account. If you don't have an account, sign-up below.</h3>
+                        <h1 style={{color: "rgb(247, 227, 200)", fontSize: "60px"}}>Welcome!</h1><br />
+                        <h2 style={{fontWeight: "bold"}}>This is the place to find your lost item, or to report a found item.</h2><br />
+                        <h3>First, login to your BMSCE account. If you don't have an account, sign-up below.</h3><br /><br />
                         <ButtonGroup size="lg">
-                          <Button color="primary" onClick={() => {history.push("/signup")}}>Sign-up</Button>
-                          <Button color="primary" onClick={() => {history.push("/login")}}>Login</Button>
+                          <Button style={{fontWeight: "bold"}} color="primary" onClick={() => {history.push("/signup")}}>Sign-up</Button>
+                          <Button style={{fontWeight: "bold"}} color="primary" onClick={() => {history.push("/login")}}>Login</Button>
                         </ButtonGroup>
                     </div>
-                    <Row style={{alignItems: "center"}}>
-                        <Col sm="3">
+                    <Row>
+                        <Col md="5" style={{padding: "30px", paddingTop: "0px", textAlign: "center"}}>
                           <Card body className="card">
-                            <CardTitle tag="h5">Lost something?</CardTitle>
-                            <CardText>Don't worry. Click here to search for your item.</CardText>
+                            <CardTitle tag="h2">Lost something?</CardTitle>
+                            <CardText>Click here to search for your item.</CardText>
                             <Button color="danger" onClick={() => {history.push("/lost")}}>Lost</Button>
                           </Card>
                         </Col>
-                        <Col sm="3">
+                        <Col md="5" style={{padding: "30px", paddingTop: "0px", textAlign: "center"}}>
                           <Card body className="card">
-                            <CardTitle tag="h5">Found something?</CardTitle>
+                            <CardTitle tag="h2">Found something?</CardTitle>
                             <CardText>Click here to return the found object.</CardText>
                             <Button color="success" onClick={() => {history.push("/found")}}>Found</Button>
                           </Card>

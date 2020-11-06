@@ -1,18 +1,22 @@
-import React from "react"
+import React from "react";
+import UploadItem from "./UploadItem";
+import {useHistory, Switch, Route, Link} from "react-router-dom";
+
 function Intro(props){
+    const history = useHistory();
     return (
-        <div class = "intro" style = {{paddingTop:"3em"}}>
+       
+            <div class = "intro" style = {{paddingTop:"3em"}}>
             <h1>Welcome to the {props.name} page</h1> <br/>
             <p style = {{fontSize: "1.2rem"}}>{props.description}
             <br />
             <br />
             <h2>{props.name} an item? Upload details here</h2>
-            <button>Upload</button>
             </p>
-            
             <br />
-        </div>
+            </div>
+            
     )
 }
 
-export default Intro
+export default Intro;

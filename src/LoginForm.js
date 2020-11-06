@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 function LoginForm(){
     return (
@@ -23,4 +23,4 @@ function LoginForm(){
         </div>
     )
 }
-export default LoginForm
+export default LoginForm;
