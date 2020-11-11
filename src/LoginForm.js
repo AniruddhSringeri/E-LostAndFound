@@ -1,8 +1,9 @@
-import React from "react"
+import React from "react";
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom";
 
 function LoginForm(){
+
     return (
         <div style = {{width:"30rem", border: "solid", borderWidth:"1px", borderRadius:"2%"}} >
             <Form style = {{width:"25rem", padding:"1rem"}}>
@@ -22,5 +23,6 @@ function LoginForm(){
             
         </div>
     )
+
 }
-export default LoginForm
+export default LoginForm;

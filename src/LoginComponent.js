@@ -1,5 +1,5 @@
-import React from "react"
-import LoginForm from "./LoginForm"
+import React from "react";
+import LoginForm from "./LoginForm";
 function LoginComponent(){
     return (
         <div align = "center" style = {{padding:"4rem"}}>
@@ -8,4 +8,4 @@ function LoginComponent(){
     )
 } 
 
-export default LoginComponent
+export default LoginComponent;

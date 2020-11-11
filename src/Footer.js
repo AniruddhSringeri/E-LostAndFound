@@ -3,7 +3,8 @@ import React from "react"
 function Footer() {
     return (
         <footer className = "foot">
-            <h1>This is a beatiful footer</h1>
+            <h3>E-LostandFound is an initiative to uphold human values like honesty and caring.</h3>
+            <h6>Copyright © 2020 BMS College of Engineering. All Rights Reserved</h6>
         </footer>
     )
 }

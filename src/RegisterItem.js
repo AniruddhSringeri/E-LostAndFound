@@ -5,9 +5,10 @@ import MultiStep from 'react-multistep';
 import StepOne from './stepOne';
 import StepTwo from './stepTwo';
 import StepThree from './stepThree';
+import {Switch, Route, Link} from "react-router-dom";
 import StepFour from './stepFour';
 
-function UploadItem(props) {
+function RegisterItem(props) {
     const {
         buttonLabel,
         className
@@ -21,7 +22,7 @@ function UploadItem(props) {
         { component: <StepFour /> }
         ]
 
-    const prevStyle = {'background-color': 'blue',
+        const prevStyle = {'background-color': 'blue',
         'border': 'none',
         'color': 'white',
         'padding': '11px',
@@ -43,14 +44,11 @@ function UploadItem(props) {
       return (
         
         <div className = "Formupl" align="center">
-        
-          <Button color="danger" onClick={toggle}>{buttonLabel}Found</Button>
-          <div >
-          <Modal isOpen={modal} toggle={toggle} style={{width:"50rem"}}>
-            
-            <ModalHeader toggle={toggle} >Modal title</ModalHeader>
-            <div>
-            <ModalBody  style={{width:"50rem"}}>        
+        <div>
+          <Button color="danger" onClick={toggle}>{buttonLabel}Lost</Button>
+          <Modal isOpen={modal} toggle={toggle} className={className} style={{width:"50rem"}}>
+            <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+            <ModalBody style={{width:"50rem"}}>        
                 <div>
                     <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle}/>
                 </div>       
@@ -59,11 +57,10 @@ function UploadItem(props) {
               <Button color="primary" onClick={toggle}>Submit</Button>{' '}
               <Button color="secondary" onClick={toggle}>Cancel</Button>
             </ModalFooter>
-            </div>
           </Modal>
         </div>
         </div>
       );
   }
 
-export default UploadItem;
+export default RegisterItem;

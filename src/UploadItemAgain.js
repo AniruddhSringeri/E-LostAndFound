@@ -3,11 +3,9 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import MultiStep from 'react-multistep';
 import StepOne from './stepOne';
-import StepTwo from './stepTwo';
-import StepThree from './stepThree';
 import StepFour from './stepFour';
 
-function UploadItem(props) {
+function UploadItemAgain(props) {
     const {
         buttonLabel,
         className
@@ -16,12 +14,10 @@ function UploadItem(props) {
     const [modal, setModal] = useState(false);
     const steps = [
         { component: <StepOne /> },
-        { component: <StepTwo /> },
-        { component: <StepThree /> },
         { component: <StepFour /> }
         ]
 
-    const prevStyle = {'background-color': 'blue',
+        const prevStyle = {'background-color': 'blue',
         'border': 'none',
         'color': 'white',
         'padding': '11px',
@@ -50,9 +46,9 @@ function UploadItem(props) {
             
             <ModalHeader toggle={toggle} >Modal title</ModalHeader>
             <div>
-            <ModalBody  style={{width:"50rem"}}>        
+            <ModalBody style={{width:"50rem"}}>        
                 <div>
-                    <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle}/>
+                    <MultiStep steps={steps} prevStyle={prevStyle} nextStyle={nextStyle} style={{width:"50rem",paddingLeft:"3rem"}}/>
                 </div>       
             </ModalBody>
             <ModalFooter>
@@ -66,4 +62,4 @@ function UploadItem(props) {
       );
   }
 
-export default UploadItem;
+export default UploadItemAgain;

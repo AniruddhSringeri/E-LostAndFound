@@ -1,10 +1,10 @@
-import React from "react"
-import {Switch, Route, Link} from "react-router-dom"
-import HomeComponent from "./HomeComponent"
-import LostComponent from "./LostComponent"
-import FoundComponent from "./FoundComponent"
-import LoginComponent from "./LoginComponent"
-import SignupComponent from "./SignupComponent"
+import React from "react";
+import {Switch, Route, Link} from "react-router-dom";
+import HomeComponent from "./HomeComponent";
+import LostComponent from "./LostComponent";
+import FoundComponent from "./FoundComponent";
+import LoginComponent from "./LoginComponent";
+import SignupComponent from "./SignupComponent";
 
 function MainComponent(){
     return (
@@ -18,4 +18,4 @@ function MainComponent(){
     )
 }
 
-export default MainComponent
+export default MainComponent;
