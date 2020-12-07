@@ -6,7 +6,7 @@ import { Nav, NavItem, NavLink } from 'reactstrap';
 
 import './header.css'
 import { connect } from 'react-redux'
-import { logout } from './actions/authActions'
+import { logout } from '../actions/authActions'
 
 function Header(props) {
 

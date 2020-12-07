@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-export default () => {
-  const [checked, setChecked] = useState('')
+export default function StepFour(props){
 
   return (
     <div>
@@ -20,8 +19,9 @@ export default () => {
           <label>
             <input
               type='checkbox'
-              checked={checked}
-              onChange={e => setChecked(e.target.value)}
+              name = "checked"
+              checked={props.checked}
+              onChange={props.handleChange}
               autoFocus
             />
             <span> Accept </span>{' '}

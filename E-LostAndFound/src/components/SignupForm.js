@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
 import {useHistory} from "react-router-dom";
-import axios from "./axios";
-import { register } from './actions/authActions'
+import axios from "../axios";
+import { register } from '../actions/authActions'
 
 import { connect } from 'react-redux'
 

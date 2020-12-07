@@ -1,16 +1,17 @@
 import React, {useEffect, useState} from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
 import {Link, useHistory} from "react-router-dom";
-import axios from "./axios";
+import axios from "../axios";
 
 import { connect } from 'react-redux'
-import { login } from './actions/authActions'
+import { login } from '../actions/authActions'
 
 function LoginForm(props){
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [msg, setMsg] = useState(null)
+    
     const history = useHistory()
 
     useEffect(()=>{
@@ -36,6 +37,7 @@ function LoginForm(props){
         }
         // Attempt to login
         props.login(User)
+        history.push("/found")
           
     }
     return (

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import ItemCard from "./ItemCard";
+import ItemCard from "../ItemCard";
 import { Container, Row, Col } from 'reactstrap';
 //import ItemsData from "./ItemsData";
-import Intro from "./Intro";
+import Intro from "../Intro";
 import {Switch, Route, useParams, useLocation, useHistory} from "react-router-dom";
-import ItemDetails from "./ItemDetails";
+import ItemDetails from "../item details/ItemDetails";
 import RegisterItem from "./RegisterItem";
 
-import axios from './axios'
+import axios from '../../axios'
 
 import { connect } from 'react-redux'
 //import action from './actions/'

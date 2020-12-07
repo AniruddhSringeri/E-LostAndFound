@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "client": "cd ../E-LostAndFound && npm start",
+    "server": "nodemon server.js",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -18,5 +20,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.13",
     "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0"
   }
 }

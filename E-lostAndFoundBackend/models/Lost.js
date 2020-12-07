@@ -9,7 +9,7 @@ const lostSchema = mongoose.Schema({
         name: String,
         category: String,
         description: String,
-        img: String,
+        img: { data: Buffer, contentType: String }
     },
     place_lost:{
         type: String,

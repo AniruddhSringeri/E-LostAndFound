@@ -1,8 +1,8 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom";
 import HomeComponent from "./HomeComponent";
-import LostComponent from "./LostComponent";
-import FoundComponent from "./FoundComponent";
+import LostComponent from "./lost components/LostComponent";
+import FoundComponent from "./found components/FoundComponent";
 import LoginComponent from "./LoginComponent";
 import SignupComponent from "./SignupComponent";
 

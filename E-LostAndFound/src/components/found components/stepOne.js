@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-export default () => {
-  const [YourName, setYourName] = useState('');
-  const [ObjectName, setObjectName] = useState('');
-  const [place, setPlace] = useState('');
-
+export default function StepOne(props) {
+  
   return (
     <div className="container">
       <div className='row'>
@@ -14,8 +11,9 @@ export default () => {
             className="col-5"
             placeholder='Your Name'
             type='text'
-            onChange={e => setYourName(e.target.value)}
-            value={YourName}
+            name = "YourName"
+            onChange={props.handleChange}
+            value={props.YourName}
             autoFocus
             style={{width:"15rem"}}
           />
@@ -28,8 +26,9 @@ export default () => {
             className="col-5"
             placeholder='Object Name'
             type='text'
-            onChange={e => setObjectName(e.target.value)}
-            value={ObjectName}
+            name = "ObjectName"
+            onChange={props.handleChange}
+            value={props.ObjectName}
             style={{width:"15rem"}}
           />
         </div>
@@ -41,8 +40,9 @@ export default () => {
             className="col-6"
             placeholder='Place'
             type='text'
-            onChange={e => setPlace(e.target.value)}
-            value={place}
+            name = "Place"
+            onChange={props.handleChange}
+            value={props.place}
             style={{width:"15rem"}}
           />
         </div>

@@ -1,8 +1,8 @@
-import axios from '../axios'
-import { returnErrors } from './errorActions'
+import axios from '../axios';
+import { returnErrors } from './errorActions';
 
 import {
-    USER_LOADED,
+    USER_LOADED,  
     USER_LOADING,
     AUTH_ERROR,
     LOGIN_SUCCESS,
@@ -23,6 +23,7 @@ export const loadUser = () => (dispatch, getState) => {
             payload: res.data
         }))
         .catch(err => {
+            console.log(err)
             dispatch(returnErrors(err.response.data.msg, err.response.status), "USER IS NOT AUTHENTICATED") 
             dispatch({
                 type: AUTH_ERROR
