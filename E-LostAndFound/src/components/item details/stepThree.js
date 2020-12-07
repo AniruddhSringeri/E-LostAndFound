@@ -6,7 +6,7 @@ export default function StepThree(props){
 
   const onDrop = picture => {
     setPictures([...pictures, picture]);
-    console.log(pictures)
+    
   };
   return (
     <ImageUploader
