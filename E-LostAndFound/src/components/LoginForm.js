@@ -37,7 +37,7 @@ function LoginForm(props){
         }
         // Attempt to login
         props.login(User)
-        history.push("/found")
+    
           
     }
     return (
