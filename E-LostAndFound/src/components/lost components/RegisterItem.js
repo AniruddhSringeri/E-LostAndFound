@@ -44,10 +44,7 @@ function RegisterItem(props) {
     }, [pictures])
 
     function handleChange(event){
-      if(!event.name){
-        setPictures([...pictures, event])
-        return
-      }
+      
       const { name, value } = event.target
       
       
@@ -73,8 +70,8 @@ function RegisterItem(props) {
     }
 
     function handleSubmit(event){
-      event.preventDefault()
-      console.log(pictures)
+      
+      
       axios.post('/lost', {
         user_id: props.userId,
         place_lost: place,
@@ -82,7 +79,6 @@ function RegisterItem(props) {
           name: ObjectName,
           category: typeob,
           description: descpob,
-          img: {data:pictures[0], contentType:"image/png"}
       }
 
       })
@@ -91,8 +87,9 @@ function RegisterItem(props) {
         toggle()
       })
       .catch(function (error) {
-        setError(error.response.data.msg)
         console.log(error);
+        setError(error.response.data.msg)
+        
       });
     }
 

@@ -6,13 +6,13 @@ import Lost from '../models/Lost.js'
 router.post('/', (req, res) => {
     const dbItem = req.body
     const {user_id, item, place_lost } = req.body
-    if(!user_id || !item.name || !item.category || !item.description || !item.img || !place_lost){
+    if(!user_id || !item.name || !item.category || !item.description || !place_lost){
         return res.status(400).json({msg:'Please enter all the fields'})
     }
 
     Lost.create(dbItem, (err, data) => {
         if(err){
-            res.status(500).send(err)
+            res.status(500).json({msg:"Something's wrong"})
         }
         else{
             res.status(201).send(data)
