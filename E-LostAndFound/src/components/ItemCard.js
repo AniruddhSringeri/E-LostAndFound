@@ -18,7 +18,7 @@ function ItemCard(props) {
           <CardTitle>{props.name}</CardTitle>
           <CardSubtitle>{props.type}</CardSubtitle>
           <CardText>{props.desc}</CardText>
-    <Button onClick = {() => history.push(`/${props.flag==0? "found": "lost"}/${props.id}`)}>{props.flag == 0 ? "Claim":"Already Found"}</Button>
+          <Button onClick = {() => history.push(`/${props.flag==0? "found": "lost"}/${props.id}`)}>{props.flag == 0 ? "Claim":"Already Found"}</Button>
         </CardBody>
       </Card>
     </div> 

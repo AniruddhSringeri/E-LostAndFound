@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "reactstrap";
+import { Button,Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
 import axios from '../../axios'
 import RegisterItemAgain from "./RegisterItemAgain";
 import UploadItemAgain from "./UploadItemAgain";
@@ -31,17 +31,20 @@ function ItemDetails(props){
     
     console.log(item)
     return (
-        <div align = "center" style = {{padding:"4rem"}}>
-        <div style = {{border:"solid", width:"40rem", padding:"6rem", paddingTop:"3rem", align:"center", borderRadius:"2%"}}>
-            <img src = {item.img} top width="100%"/>
-            <hr />
-            <h2>Name: {item.name}</h2>
-            <h2>{item.description}</h2>
-            <h3>Type: {item.category}</h3>
-            <br />
-            {item.flag == 0 ? <RegisterItemAgain/> : <UploadItemAgain/>}
-
-        </div>
+        <div className="container">
+            <div className="row">
+            <div className="col col-md-6" style = {{padding:"4rem"}}>
+            <Card>
+                <CardImg top src = {item.img} top width="100%" alt={item.name}/>
+                <CardBody>
+                    <CardTitle>Name: {item.name}</CardTitle>
+                    <CardText>{item.description}</CardText>
+                    <CardText>Type: {item.category}</CardText>
+                    <CardText>{item.flag == 0 ? <RegisterItemAgain/> : <UploadItemAgain/>}</CardText>
+                </CardBody>
+            </Card>
+            </div>
+            </div>
         </div>
     )
 }

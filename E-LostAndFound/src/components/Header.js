@@ -1,8 +1,8 @@
 import React, { useState, useEffect, Fragment } from "react";
 
 import {Link} from "react-router-dom";
-import {Container, Row, Col} from "reactstrap";
-import { Nav, NavItem, NavLink } from 'reactstrap';
+import {Container, Row, Col, NavbarBrand, Navbar} from "reactstrap";
+import { Nav, NavItem, NavLink, NavbarToggler, Collapse } from 'reactstrap';
 
 import './header.css'
 import { connect } from 'react-redux'
@@ -10,8 +10,16 @@ import { logout } from '../actions/authActions'
 
 function Header(props) {
 
+    const [isNavOpen, setisNavOpen] = useState(false);
+    function toggleNav() {
+        setisNavOpen( prevState =>  !prevState)
+    }
     const guestLinks = 
-        <Fragment>
+    <Navbar dark expand="md">
+            <NavbarToggler onClick={toggleNav} />
+            <NavbarBrand className="mr-auto" href="/"><img src='./logo.png' height="30" width="41" alt='E-Lost and FOund' />E-Lost and Found</NavbarBrand>
+            <Collapse isOpen={isNavOpen} navbar>
+            <Nav navbar>
             <NavItem>
                 <NavLink href = "/">Home</NavLink>
             </NavItem>
@@ -21,10 +29,16 @@ function Header(props) {
             <NavItem>
                 <NavLink href="/signup" >Signup</NavLink>
             </NavItem>
-        </Fragment>
+            </Nav>
+            </Collapse>
+    </Navbar>
     
     const loggedInLinks = 
-        <Fragment>
+    <Navbar dark expand="md">
+        <NavbarToggler onClick={toggleNav} />
+            <NavbarBrand className="mr-auto" href="/"><img src='./logo.png' height="30" width="41" alt='E-Lost and FOund' />E-Lost and Found</NavbarBrand>
+            <Collapse isOpen={isNavOpen} navbar>
+            <Nav navbar>
             <NavItem>
                 <span className="navbar-text">
                     <strong>{props.auth.user? `Welcome ${props.auth.user.name}` : null}</strong>
@@ -42,24 +56,17 @@ function Header(props) {
             <NavItem>
                 <NavLink onClick = {props.logout} href = "/" >Logout</NavLink>
             </NavItem>
-        </Fragment>
+            </Nav>
+            </Collapse>
+    </Navbar>
 
     return (
         <header className = "header" style = {{width:"100%"}}>
-            <Container className="themed-container" fluid={true} style = {{width:"100%"}}>
+            <Container className="">
                 <Row>
-                    <Col xl = "3" lg = "2" style = {{paddingLeft:"2rem", paddingBottom:"1rem"}}>
-                        <img src = "./logo.png" height = "100px" width = "100px" />
-                    </Col>
-                    <Col xl = "5">
-                        <h1 align = "center" style = {{ paddingTop:"1.4rem", fontFamily:"sans-serif", fontSize: "4em"}}>E-Lost and Found Portal</h1>
-                    </Col>
-
-                    <Col xl = "4" align = "right" paddingTop = "1rem" >
-                    <Nav style = {{fontSize: "1.5em", color:"white", paddingTop:"2rem", paddingLeft:"4rem"}}>
+                    <Nav>
                         { props.auth.isAuthenticated? loggedInLinks:guestLinks}
                     </Nav>
-                    </Col>
                 </Row>
             </Container>
         </header>
