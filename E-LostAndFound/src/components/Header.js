@@ -17,58 +17,61 @@ function Header(props) {
     const guestLinks = 
     <Navbar dark expand="md">
             <NavbarToggler onClick={toggleNav} />
-            <NavbarBrand className="mr-auto" href="/"><img src='./logo.png' height="30" width="41" alt='E-Lost and FOund' />E-Lost and Found</NavbarBrand>
             <Collapse isOpen={isNavOpen} navbar>
-            <Nav navbar>
-            <NavItem>
-                <NavLink href = "/">Home</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink href="/login" >Login</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink href="/signup" >Signup</NavLink>
-            </NavItem>
-            </Nav>
+                <Nav navbar>
+                <NavItem>
+                    <NavLink href = "/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/login" >Login</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/signup" >Signup</NavLink>
+                </NavItem>
+                </Nav>
             </Collapse>
     </Navbar>
     
     const loggedInLinks = 
     <Navbar dark expand="md">
         <NavbarToggler onClick={toggleNav} />
-            <NavbarBrand className="mr-auto" href="/"><img src='./logo.png' height="30" width="41" alt='E-Lost and FOund' />E-Lost and Found</NavbarBrand>
             <Collapse isOpen={isNavOpen} navbar>
-            <Nav navbar>
-            <NavItem>
-                <span className="navbar-text">
-                    <strong>{props.auth.user? `Welcome ${props.auth.user.name}` : null}</strong>
-                </span>
-            </NavItem><br/>
-            <NavItem>
-                <NavLink href = "/">Home</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink href="/lost" >Lost</NavLink>
-            </NavItem>
-            <NavItem>
-                    <NavLink href="/found">Found</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink onClick = {props.logout} href = "/" >Logout</NavLink>
-            </NavItem>
-            </Nav>
+                <Nav navbar>
+                <NavItem>
+                    <NavLink href = "/">Home</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/lost" >Lost</NavLink>
+                </NavItem>
+                <NavItem>
+                        <NavLink href="/found">Found</NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink onClick = {props.logout} href = "/" >Logout</NavLink>
+                </NavItem>
+                </Nav>
             </Collapse>
     </Navbar>
 
     return (
         <header className = "header" style = {{width:"100%"}}>
-            <Container className="">
-                <Row>
-                    <Nav>
+            <Row className = "main-titles-grandfather">
+                <Col md="3" sm="12" className = "main-titles-dad">
+                    <NavbarBrand className="mr-auto main-title" href="/"><img src='./logo.png' alt='bmsce logo' />E-Lost and Found</NavbarBrand>
+                </Col>
+                <Col md="6">
+                    <Nav style = {{align:"left"}}>
                         { props.auth.isAuthenticated? loggedInLinks:guestLinks}
                     </Nav>
-                </Row>
-            </Container>
+                </Col>
+                <Col md="2">
+                    <span className="navbar-text">
+                        {props.auth.user? `Welcome ${props.auth.user.name}` : null}
+                    </span>
+                </Col>
+            </Row>
+            
+            
         </header>
     )
 }

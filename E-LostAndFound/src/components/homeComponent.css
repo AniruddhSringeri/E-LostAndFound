@@ -4,8 +4,11 @@
 
 .jumbotron {
     /*height: 122vh;*/
-    background-image: url('../bms_blur.jpg');
-    background-size: cover;
+    /* background-image: url('../bms_blur.jpg');
+    background-size: cover; */
+    font-family: arial;
+    background-image:linear-gradient(to right, rgb(0, 0, 43),rgb(1, 1, 54)) !important;
+    padding-top:1em !important;
   }
 .welcome {
     padding: 5em;
@@ -17,7 +20,7 @@
 }
 
 .welcome h2 {
-    color: black;
+    color: white
 }
 
 h1 {
@@ -34,7 +37,7 @@ h2 {
 }
 
 .welcome h3 {
-    color: black;
+    color:white;
 }
 
 .card{
@@ -51,10 +54,20 @@ h2 {
 
 .button-login-signup {
     font-weight: bold;
-    margin: 0.3em;
+    margin: 0.8em;
+    padding-left:0.2em !important;
+    padding-right:0.2em !important;
 }
 
 .button-lost-found {
     width: 10em;
     margin: 0 auto;
 }
+
+.wrapper {
+    transform-style: preserve-3d;
+    z-index: 100;
+    transform-origin: bottom;
+    transform: rotateX(10deg) rotateY(10deg);
+
+    }

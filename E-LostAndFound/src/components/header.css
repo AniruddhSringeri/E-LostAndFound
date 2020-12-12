@@ -1,21 +1,36 @@
 .header {
-    background-color: blue;
-    padding-bottom: 10px;
-    padding-top:20px;
+    background-image:linear-gradient(to right, rgb(0, 0, 43),rgb(1, 1, 54)) !important;
+    padding: 1em 0em 1em 0em;
   }
-  
-.header  Container > Row > Col > h1 {
-    color:aliceblue;
+
+.main-titles-dad{
+    margin:0 auto;
 }
-  
-.header > Link{
-    color:aliceblue;
+.main-title {
+    color: white;
+    font-size: 1.7em !important;
+    font-family:helvetica;
+    margin:0 auto !important;
+}
+.main-titles-grandfather{
+    margin:0 auto !important;
+}
+.main-title img{
+    margin-right:0.5em;
+    height: 2.4em;
+    width:2.4em;
 }
 
+.navbar-text{
+    color:white !important;
+    font-size:1.2em;
+}
 .nav-link{
-    color:white
+    color:white !important;
+    font-weight: 85;
+    font-size: 1.5em;
 }
 
 .nav-link:hover{
-    color: pink;
+    color: pink !important;
 }
