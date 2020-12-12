@@ -6,6 +6,9 @@ import axios from "../axios";
 import { connect } from 'react-redux'
 import { login } from '../actions/authActions'
 
+import "./loginForm.css"
+
+
 function LoginForm(props){
 
     const [email, setEmail] = useState("")
@@ -43,16 +46,16 @@ function LoginForm(props){
     return (
         <div className="container">
             <div className="row">
-                <div className="col-12 col-md-6">
-                <div style = {{ border: "solid", borderWidth:"1px", borderRadius:"2%"}} >
+                <div className="col-12">
+                <div className = "form-container" >
                 { msg? <Alert color="danger">{ msg }</Alert>: null}
-                <Form style = {{padding:"1rem"}}>
+                <Form className = "login-form">
                 <h2>Login</h2>
-                <FormGroup style = {{padding:"1rem"}}>
+                <FormGroup>
                     <Label for="exampleEmail">Email</Label>
                     <Input type="email" name = "email" onChange = {handleChange} value = {email}  placeholder="enter e-mail" />
                 </FormGroup>
-                <FormGroup style = {{padding:"1rem"}}>
+                <FormGroup>
                     <Label for="examplePassword">Password</Label>
                     <Input type="password" name = "password" onChange = {handleChange} value = {password} placeholder="password placeholder" />
                 </FormGroup>

@@ -4,8 +4,7 @@ import {useLocation} from 'react-router-dom'
 function LoginComponent(){
     const location = useLocation()
     return (
-        <div align = "center" style = {{padding:"4rem"}}>
-            <h2>{location.state? location.state.msg: ""}</h2>
+        <div>
             <LoginForm />
         </div>
     )

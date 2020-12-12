@@ -6,6 +6,9 @@ import { register } from '../actions/authActions'
 
 import { connect } from 'react-redux'
 
+import "./loginForm.css"
+
+
 function SignupForm(props){
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -48,20 +51,20 @@ function SignupForm(props){
     return(
         <div className="container">
             <div className="row">
-                <div className="col-12 col-md-6">
-                <div style = {{ border: "solid", borderWidth:"1px", borderRadius:"2%"}} >
+                <div className="col-12">
+                <div className = "form-container">
                 { msg? <Alert color="danger">{ msg }</Alert>: null}
-                <Form style = {{padding:"1rem"}}>
+                <Form className = "login-form">
                 <h2>Sign up</h2>
                 <FormGroup>
                     <Label>Name</Label>
                     <Input name = "name" onChange = {handleChange} value = {name} placeholder = "Name"/>
                 </FormGroup>
-                <FormGroup style = {{padding:"1rem"}}>
+                <FormGroup >
                     <Label for="exampleEmail">Email</Label>
                     <Input type="email" name="email" onChange = {handleChange} value = {email} id="exampleEmail" placeholder="enter e-mail" />
                 </FormGroup>
-                <FormGroup style = {{padding:"1rem"}}>
+                <FormGroup >
                     <Label for="examplePassword">Password</Label>
                     <Input type="password" name="password" onChange = {handleChange} value = {password} id="examplePassword" placeholder="password placeholder" />
                 </FormGroup>

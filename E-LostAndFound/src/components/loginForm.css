@@ -1,0 +1,30 @@
+.login-form {
+    padding: 1em;
+}
+
+.login-form h2{
+    color:aqua
+}
+
+.form-group{
+    padding: 1em;
+}
+
+.form-group label{
+    color:blue;
+}
+
+.form-group input{
+    border-color: rgb(0, 148, 247);
+}
+
+.form-container{
+    margin: 3em auto 6em;
+}
+
+.login-form{
+    margin: 0 auto;
+    max-width: 20em;
+    border: solid 0.2em blue;
+    border-radius: 2%;
+}
