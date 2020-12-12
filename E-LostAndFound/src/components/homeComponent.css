@@ -1,0 +1,63 @@
+.container {
+    text-align:center;
+}
+
+.jumbotron {
+    /*height: 122vh;*/
+    background-image: url('../bms_blur.jpg');
+    background-size: cover;
+  }
+.welcome {
+    padding: 5em;
+}
+
+.welcome h1 {
+    font-size: 3.7em;
+    color: aqua
+}
+
+.welcome h2 {
+    color: rgb(104, 165, 194);
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+h1 {
+    color:rgb(247, 227, 200);
+    font-size: 3em;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+.login-signup {
+    margin:0.3em auto;
+}
+
+.login-signup h3 {
+    color: rgb(104, 165, 194);
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+
+}
+
+.card{
+    border: solid 2px green;
+    border-width: 1px;
+    margin: 1.6em auto;
+    max-width: 26em;
+}
+
+.card > h1 {
+    color:purple;
+}
+  
+
+.button-login-signup {
+    font-weight: bold;
+    margin: 0.3em;
+}
+
+.button-lost-found {
+    width: 10em;
+    margin: 0 auto;
+}

@@ -31,14 +31,7 @@ body{
 }
 
 /*-----------Item card-------------*/
-.card {
-  padding: 10px;
-  border-style: solid;
-  border-width: 1px; 
-}
- .card > h1 {
-  color:purple;
- }
+
 
  /*--------------Footer------------*/
 
@@ -62,15 +55,8 @@ body{
 }
 
 
-.welcome {
-  padding: 150px;
-}
 
-.jumbotron {
-  height: 82vh;
-  background-image: url('bms_blur.jpg');
-  background-size: cover;
-}
+
 
 
 .modal-content {
