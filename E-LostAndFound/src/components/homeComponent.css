@@ -6,9 +6,12 @@
     /*height: 122vh;*/
     /* background-image: url('../bms_blur.jpg');
     background-size: cover; */
+    border-top:0px;
     font-family: arial;
     background-image:linear-gradient(to right, rgb(0, 0, 43),rgb(1, 1, 54)) !important;
     padding-top:1em !important;
+    box-shadow: 0 0.4em 0.2em 0.2em rgb(2, 26, 71);
+    border-radius: 0 0 0.8% 0.8% !important;
   }
 .welcome {
     padding: 5em;
@@ -42,9 +45,14 @@ h2 {
 
 .card{
     border: solid 2px green;
+    background-color: rgb(215, 225, 233) !important;
     border-width: 1px;
     margin: 1.6em auto;
     max-width: 26em;
+}
+
+.card:hover{
+    transform: rotate(0.2deg);
 }
 
 .card > h1 {
@@ -57,6 +65,8 @@ h2 {
     margin: 0.8em;
     padding-left:0.2em !important;
     padding-right:0.2em !important;
+    box-shadow: 0em 0em 0.03em 0.05em aqua !important;
+
 }
 
 .button-lost-found {
@@ -71,3 +81,21 @@ h2 {
     transform: rotateX(10deg) rotateY(10deg);
 
     }
+.carousel-container{
+    margin:4em auto !important;
+}
+
+.carousel-caption h3 {
+    color:rgb(0, 0, 43);
+    font-size:2.4em;
+    text-shadow: 1em !important;
+    font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+
+
+.slide{
+    border: 0.2em black solid;
+    box-shadow: 3px 3px 5px 6px rgba(3, 38, 66, 0.486);
+}
+

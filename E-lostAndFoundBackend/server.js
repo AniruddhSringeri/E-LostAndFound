@@ -7,6 +7,8 @@ import lost from './routes/lost.js'
 import found from './routes/found.js'
 import signup from './routes/signup.js'
 import login from './routes/login.js'
+import googlelogin from './routes/googlelogin.js'
+
 // App Config
 const app = express();
 const port = process.env.PORT || 8001
@@ -30,6 +32,9 @@ app.use('/found', found)
 app.use('/signup', signup)
 
 app.use('/login', login)
+
+app.use('/googlelogin', googlelogin)
+
 
 // API Endpoints
 app.get('/', (req, res) => res.status(200).send('Is math related to science?!!'))

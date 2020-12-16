@@ -8,6 +8,7 @@ import auth from "../middleware/auth.js"
 import User from '../models/User.js'
 
 
+
 router.post('/',(req,res) => {
     const { email, password } = req.body
     // Simple validation
@@ -18,7 +19,10 @@ router.post('/',(req,res) => {
     // Check for existing user
     User.findOne({ email })
       .then(user => {
+          // if normal login
           if(!user) return res.status(400).json({msg: "E-mail isn't registered"})
+          // else if google login
+            // register this user
 
           // Validate password
           bcrypt.compare(password, user.password)
@@ -50,6 +54,7 @@ router.post('/',(req,res) => {
 })
 
 router.get('/', auth, (req, res) => {
+
     User.findById(req.user.id)
       .select("-password")
       .then(user => res.status(200).json(user))
@@ -58,3 +63,12 @@ router.get('/', auth, (req, res) => {
 
 
 export default router
+
+// router.get('/facebook/token', passport.authenticate('facebook-token'), (req, res) => {
+//     if (req.user) {
+//       var token = authenticate.getToken({_id: req.user._id});
+//       res.statusCode = 200;
+//       res.setHeader('Content-Type', 'application/json');
+//       res.json({success: true, token: token, status: 'You are successfully logged in!'});
+//     }
+//   });

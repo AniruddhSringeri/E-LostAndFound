@@ -6,6 +6,7 @@ import UploadItem from "./UploadItem";
 import Intro from "../Intro";
 import { Switch, Route } from 'react-router-dom'
 import ItemDetails from "../item details/ItemDetails";
+import Map from "../Map"
 
 import axios from '../../axios'
 function FoundComponent(){
@@ -42,6 +43,7 @@ function FoundComponent(){
                     <UploadItem />
                     <hr />
                     <h3 align = "center" style = {{fontSize:"3rem"}}>Items that are registered lost!</h3>
+                    <Map />
                     <br/>
 
                     <Container className="themed-container">
@@ -50,7 +52,7 @@ function FoundComponent(){
                         </Row>
                     </Container>
                     <br />
-                    <hr />
+                    
                     
                     <br />
                     

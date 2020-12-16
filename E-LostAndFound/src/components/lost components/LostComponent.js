@@ -6,6 +6,7 @@ import Intro from "../Intro";
 import {Switch, Route, useParams, useLocation, useHistory} from "react-router-dom";
 import ItemDetails from "../item details/ItemDetails";
 import RegisterItem from "./RegisterItem";
+import Map from "../Map"
 
 import axios from '../../axios'
 
@@ -51,14 +52,14 @@ function LostComponent(props){
                     <hr />
                     <h3 align = "center" style = {{fontSize:"3rem"}}>Found items</h3>
                     <br/>
-
+                    <Map />
                     <Container className="themed-container">
                         <Row>
                             {items}
                         </Row>
                     </Container>
                     <br />
-                    <hr />
+                    
                     
                     <br />
                     

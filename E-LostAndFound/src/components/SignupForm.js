@@ -23,7 +23,7 @@ function SignupForm(props){
         }else {
             setMsg(null)
         }
-    })
+    }, [])
 
     function handleChange(event){
         const {name, value} = event.target
@@ -41,12 +41,20 @@ function SignupForm(props){
             email,
             password
         }
-        
-        props.register(newUser)
-        
-        if(props.isAuthenticated){
-            history.push('/lost')
+
+        if(password.length < 6){
+            setMsg("Password must be at least 6 characters long")
+
         }
+        else{
+
+            props.register(newUser)
+            
+            if(props.isAuthenticated){
+                history.push('/lost')
+            }
+        }
+        
     }
     return(
         <div className="container">
