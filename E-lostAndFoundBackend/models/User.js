@@ -1,6 +1,9 @@
 import mongoose from 'mongoose'
 
 const userSchema = mongoose.Schema({
+    verified:{
+        type: Boolean,
+    },
     name:{
         type: String,
         required: true
@@ -17,6 +20,9 @@ const userSchema = mongoose.Schema({
     registered_date: {
         type: Date,
         default: Date.now
+    },
+    otp: {
+        type: String
     }
 })
 

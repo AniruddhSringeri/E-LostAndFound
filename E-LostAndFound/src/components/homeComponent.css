@@ -51,9 +51,7 @@ h2 {
     max-width: 26em;
 }
 
-.card:hover{
-    transform: rotate(0.2deg);
-}
+
 
 .card > h1 {
     color:purple;
@@ -75,12 +73,16 @@ h2 {
 }
 
 .wrapper {
-    transform-style: preserve-3d;
-    z-index: 100;
-    transform-origin: bottom;
-    transform: rotateX(10deg) rotateY(10deg);
-
-    }
+    transform: perspective(1000px) rotateX(7deg) rotateY(-8deg) ;
+    max-width:20em !important;
+    max-height:30em !important;
+    margin:0 auto;
+    transition-duration: 0.5s;
+}
+.wrapper:hover{
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
+    transition-duration: 0.5s;
+}
 .carousel-container{
     margin:4em auto !important;
 }

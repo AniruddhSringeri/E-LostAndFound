@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Button, Form, FormGroup, Label, Input, FormText, Alert } from 'reactstrap';
-import {useHistory} from "react-router-dom";
+import {Switch, Route, useHistory} from "react-router-dom";
 import axios from "../axios";
 import { register } from '../actions/authActions'
 
 import { connect } from 'react-redux'
+import VerifyUser from "./VerifyUser.js"
 
 import "./loginForm.css"
 
@@ -50,38 +51,46 @@ function SignupForm(props){
 
             props.register(newUser)
             
-            if(props.isAuthenticated){
-                history.push('/lost')
-            }
+            
+            history.push('/signup/verify')
+            
+            
         }
         
     }
     return(
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                <div className = "form-container">
-                { msg? <Alert color="danger">{ msg }</Alert>: null}
-                <Form className = "login-form">
-                <h2>Sign up</h2>
-                <FormGroup>
-                    <Label>Name</Label>
-                    <Input name = "name" onChange = {handleChange} value = {name} placeholder = "Name"/>
-                </FormGroup>
-                <FormGroup >
-                    <Label for="exampleEmail">Email</Label>
-                    <Input type="email" name="email" onChange = {handleChange} value = {email} id="exampleEmail" placeholder="enter e-mail" />
-                </FormGroup>
-                <FormGroup >
-                    <Label for="examplePassword">Password</Label>
-                    <Input type="password" name="password" onChange = {handleChange} value = {password} id="examplePassword" placeholder="password placeholder" />
-                </FormGroup>
-                <Button color="success" onClick = {handleSubmit}>Sign up</Button>
-                </Form>
+        <Switch>
+            <Route exact path = "/signup">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                        <div className = "form-container">
+                        { msg? <Alert color="danger">{ msg }</Alert>: null}
+                        <Form className = "login-form">
+                        <h2>Sign up</h2>
+                        <FormGroup>
+                            <Label>Name</Label>
+                            <Input name = "name" onChange = {handleChange} value = {name} placeholder = "Name"/>
+                        </FormGroup>
+                        <FormGroup >
+                            <Label for="exampleEmail">Email</Label>
+                            <Input type="email" name="email" onChange = {handleChange} value = {email} id="exampleEmail" placeholder="enter e-mail" />
+                        </FormGroup>
+                        <FormGroup >
+                            <Label for="examplePassword">Password</Label>
+                            <Input type="password" name="password" onChange = {handleChange} value = {password} id="examplePassword" placeholder="password placeholder" />
+                        </FormGroup>
+                        <Button color="success" onClick = {handleSubmit}>Sign up</Button>
+                        </Form>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-        </div>
+            </Route>
+            <Route path = "/signup/verify" >
+                <VerifyUser />
+            </Route>
+        </Switch>
     )
 }
 const mapStateToProps = state => ({

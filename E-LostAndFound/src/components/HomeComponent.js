@@ -73,7 +73,8 @@ function HomeComponent() {
     return (
         <div>
             <Jumbotron>
-                <Container fluid className="container">
+              <div className = "row">
+                <Container fluid className="container col-xl-6">
                     
                   <div className="welcome col-md-12">
                     <h1>Welcome!</h1><br />
@@ -103,17 +104,21 @@ function HomeComponent() {
                     </Row>
                   </div>
                 </Container>
-              {/* {<div className = "wrapper">
+
+              <div className = "wrapper col-xl-6">
                   <div className = "inside-wrapper">
                 <ItemCard img = "https://f1af951e8abcbc4c70b9-9997fa854afcb64e87870c0f4e867f1d.lmsin.net/1000007319314-1000007319313_01-750.jpg"
-                name = "Bose headphones" 
-                type = "electronics" 
+                name = "Water bottle" 
+                type = "Stationary" 
                 description = "Model: qc 35, black"
+                flag = "0"
+                id = "/"
                 />
                   </div>
-              </div>} */}
-
+              </div>
+            </div>
             </Jumbotron>
+          
 
             <Row>
               <Col md = "12" lg = "11" xl = "10" className = "carousel-container">
@@ -132,7 +137,7 @@ function HomeComponent() {
 
                     
             
-        </div>
+      </div>
     )
 }
 
