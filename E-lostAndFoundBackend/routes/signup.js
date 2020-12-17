@@ -32,7 +32,7 @@ var transporter = nodemailer.createTransport({
   });
   
   var mailOptions = {
-    from: 'elostfound204@gmail.com',
+    from: 'BMSCE Lost and Found <elostfound204@gmail.com>',
     to: '',
     subject: 'BMSCE lost and found verification OTP',
     text: `Your OTP is ${OTP}`

@@ -18,6 +18,9 @@ function LostComponent(props){
     const [ItemsData, setItemsData] = useState([])
 
     useEffect(() => {
+        console.log(props)
+    
+
         async function fetchData(){
             const req = await axios.get('/lost')
 
@@ -27,12 +30,18 @@ function LostComponent(props){
         fetchData()
     }, [])
 
+
     const items = ItemsData.map((lost) =>{
-            const {item} = lost
+            // const {item} = lost
+            console.log(lost.productImage.data)
+
+            // const base64 = convert(lost.productImage.data)
+
+            const base64 = Buffer.from(lost.productImage.data, 'base64')
             return(
                 
                 <Col sm = "12" md = "6" xl = "3" lg = "4">
-                    <ItemCard key = {lost._id} name = {item.name} img = {item.img} type = {item.category} desc = {item.description} id = {lost._id} flag = {1}/>
+                    <ItemCard key = {lost._id} name = {""} img = {lost.productImage.data} type = {lost.typeob} desc = {lost.descp} id = {lost._id} flag = {1}/>
                 </Col>
             ); 
     }); 

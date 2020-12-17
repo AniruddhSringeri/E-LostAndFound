@@ -13,11 +13,12 @@ function ItemCard(props) {
 
   const buttonForFound = <Button onClick = {() => history.push(`/found/${props.id}`)}>Claim</Button>
   const buttonForLost = <Button onClick = {() => history.push(`/lost/${props.id}`)}>Already Found</Button>
-  const buttonForHome = <Button onClick = {}>Claim</Button>
+  
     return (
     <div style = {{paddingTop:"2em"}} >
       <Card className = "card">
-        <CardImg top width="100%" src= {props.img} alt="Card image cap"/>
+      {/* <img src = {`data:image/png;base64,${this.state.picture}`} />  */}
+        <CardImg top width="100%" src = {`data:image/png;base64,${props.img}`} alt="Card image cap"/>
         <CardBody>
           <CardTitle>{props.name}</CardTitle>
           <CardSubtitle>{props.type}</CardSubtitle>

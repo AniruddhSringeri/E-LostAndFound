@@ -1,24 +1,14 @@
 import mongoose from 'mongoose'
 
-const lostSchema = mongoose.Schema({
-    user_id:{
-        type: String,
-        required: true
-    },
-    item: {
-        name: String,
-        category: String,
-        description: String,
-        img: { data: Buffer, contentType: String }
-    },
-    place_lost:{
-        type: String,
-        required: true
-    },
-    time: {
-        type:Date,
-        default:Date.now
-    }
-})
+const productSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    userId:{type: String},
+    name: { type: String },
+    email: {type: String},
+    place: { type: String },
+    typeob: {type: String},
+    descp: {type: String},
+    productImage: { data: Buffer }
+});
 
-export default mongoose.model('lost', lostSchema)
+export default mongoose.model('Lost', productSchema);
