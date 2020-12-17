@@ -12,6 +12,12 @@ import axios from '../../axios'
 
 import { connect } from 'react-redux'
 //import action from './actions/'
+function bufferToBase64(buf) {
+    var binstr = Array.prototype.map.call(buf, function (ch) {
+        return String.fromCharCode(ch);
+    }).join('');
+    return btoa(binstr);
+}
 
 function LostComponent(props){
 
@@ -33,15 +39,19 @@ function LostComponent(props){
 
     const items = ItemsData.map((lost) =>{
             // const {item} = lost
-            console.log(lost.productImage.data)
+            
+            console.log(lost.productImage.data.data)
+            var data = new Uint8Array(lost.productImage.data.data);
+
+            var base64 = bufferToBase64(data);
 
             // const base64 = convert(lost.productImage.data)
 
-            const base64 = Buffer.from(lost.productImage.data, 'base64')
+            
             return(
                 
                 <Col sm = "12" md = "6" xl = "3" lg = "4">
-                    <ItemCard key = {lost._id} name = {""} img = {lost.productImage.data} type = {lost.typeob} desc = {lost.descp} id = {lost._id} flag = {1}/>
+                    <ItemCard key = {lost._id} name = {""} img = {base64} type = {lost.typeob} desc = {lost.descp} id = {lost._id} flag = {1}/>
                 </Col>
             ); 
     }); 
