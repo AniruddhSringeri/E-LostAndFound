@@ -106,7 +106,7 @@ return null;
 
   render(){
     return(
-      <div>
+      <div align = "center">
         <Button outline onClick={this.toggleModal}>Register an item you have lost</Button>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
         <ModalHeader toggle={this.toggleModal}>Register a Lost item</ModalHeader>

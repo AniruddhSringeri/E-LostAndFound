@@ -4,6 +4,7 @@ import { Button,Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap"
 import axios from '../../axios'
 import RegisterItemAgain from "./RegisterItemAgain";
 import UploadItemAgain from "./UploadItemAgain";
+import { connect } from "react-redux"
 
 function bufferToBase64(buf) {
     var binstr = Array.prototype.map.call(buf, function (ch) {
@@ -70,6 +71,27 @@ function ItemDetails(props){
    // console.log(ItemData)
     //src={`data:image/png;base64,${base64}`}
     */
+
+    function handleFound(event){
+        event.preventDefault()
+        axios.post('/confirmFound', {
+            lostEmail: ItemData.email,
+            foundEmail: props.userEmail
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
+
+    function handleClaim(event){
+        event.preventDefault()
+        axios.post('/confirmFound', {
+            lostEmail: props.userEmail,
+            foundEmail: ItemData.email
+        })
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    }
+   if(props.flag == 0){
     return ( 
         <div className="container">
             <div className="row">
@@ -80,13 +102,40 @@ function ItemDetails(props){
                     <CardTitle>Name: {ItemData.name}</CardTitle>
                     <CardText>{ItemData.desp}</CardText>
                     <CardText>Type: {ItemData.typeob}</CardText>
-                    <CardText>{ItemData.flag == 0 ? <RegisterItemAgain/> : <UploadItemAgain/>}</CardText>
+                    <CardText>Are you sure that this is your item?</CardText>
+                    <Button onClick = {handleClaim} color = "danger">Yes, Claim</Button>
                 </CardBody>
             </Card>
             </div>
             </div>
         </div>
     )
+   }
+   else{
+       return (
+        <div className="container">
+        <div className="row">
+        <div className="col col-md-6" style = {{padding:"4rem"}}>
+        <Card>
+            <CardImg top src={`data:image/png;base64,${base64}`} width="100%" alt={ItemData.name}/>
+            <CardBody>
+                <CardTitle>Name: {ItemData.name}</CardTitle>
+                <CardText>{ItemData.desp}</CardText>
+                <CardText>Type: {ItemData.typeob}</CardText>
+                <CardText>Are you sure you have found this item?</CardText>
+                <Button onClick={handleFound}>Yes</Button>
+            </CardBody>
+        </Card>
+        </div>
+        </div>
+    </div>
+       )
+   }
+}
+function mapStateToProps(state){
+    return {
+        userEmail: state.auth.user.email
+    }
 }
 
-export default ItemDetails;
+export default connect(mapStateToProps, {})(ItemDetails);

@@ -24,7 +24,10 @@ function SignupForm(props){
         }else {
             setMsg(null)
         }
-    }, [])
+        if(props.isAuthenticated){
+            history.push('/signup/verify')
+        }
+    })
 
     function handleChange(event){
         const {name, value} = event.target
@@ -43,19 +46,14 @@ function SignupForm(props){
             password
         }
 
-        if(password.length < 6){
-            setMsg("Password must be at least 6 characters long")
+        
 
-        }
-        else{
-
-            props.register(newUser)
+        props.register(newUser)
+        
+        
             
             
-            history.push('/signup/verify')
-            
-            
-        }
+        
         
     }
     return(

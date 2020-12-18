@@ -50,6 +50,12 @@ router.post('/',(req,res) => {
       .then(user => {
           if(user) return res.status(400).json({msg: "User already exists"})
 
+          if(!email.endsWith("@bmsce.ac.in")){
+              return res.status(400).json({msg:"Please enter bmsce mail Id only"})
+          }
+          if(password.length < 6){
+            return res.status(400).json({msg:"Password must be at least 6 characters long"})
+          }
           const newUser = new User({
               verified: false,
               name,

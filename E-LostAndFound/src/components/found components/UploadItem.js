@@ -104,10 +104,10 @@ return null;
 
   render(){
     return(
-      <div>
+      <div align = "center">
         <Button outline onClick={this.toggleModal}>Register an item you have found</Button>
         <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
-        <ModalHeader toggle={this.toggleModal}>Register a FOund item</ModalHeader>
+        <ModalHeader toggle={this.toggleModal}>Register a Found item</ModalHeader>
         <ModalBody>
         <React.Fragment>
         <h1>Register an item you have found!</h1>

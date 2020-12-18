@@ -30,6 +30,9 @@ function LoginForm(props){
         }else {
             setMsg(null)
         }
+        if(props.isAuthenticated){
+            history.push("/")
+        }
     })
 
     function handleChange(event){
@@ -46,8 +49,14 @@ function LoginForm(props){
         }
         // Attempt to login
         props.login(User)
+
+        if(props.isAuthenticated){
+            history.push("/")
+        }
           
     }
+
+    
 
     const responseGoogle = (googleUser) => {
         var id_token = googleUser.getAuthResponse().id_token

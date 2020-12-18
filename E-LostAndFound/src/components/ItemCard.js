@@ -13,7 +13,22 @@ function ItemCard(props) {
 
   const buttonForFound = <Button onClick = {() => history.push(`/found/${props.id}`)}>Claim</Button>
   const buttonForLost = <Button onClick = {() => history.push(`/lost/${props.id}`)}>Already Found</Button>
-  
+  if (props.flag == 3){
+    return (
+      <div style = {{paddingTop:"2em"}} >
+      <Card className = "card">
+        <CardImg top width="100%" src = {props.img} alt="Card image cap"/>
+        <CardBody>
+          <CardTitle>{props.name}</CardTitle>
+          <CardSubtitle>{props.type}</CardSubtitle>
+          <CardText>{props.desc}</CardText>
+          
+          <Button>Claim</Button>
+        </CardBody>
+      </Card>
+    </div> 
+    )
+  }
     return (
     <div style = {{paddingTop:"2em"}} >
       <Card className = "card">

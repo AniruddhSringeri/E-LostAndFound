@@ -22,10 +22,10 @@ function VerifyUser(props) {
     }
 
     return (
-        <div>
+        <div align = "center">
             
-            <form>
-                <h1>Enter otp</h1>
+            <form >
+                <h1 style = {{color: "blue"}}>Enter otp</h1>
                 <input value = {otp} onChange = {handleChange} type = "text" placeholder = "OTP"/>
                 <button onClick = {handleSubmit}>Submit</button>
             </form>

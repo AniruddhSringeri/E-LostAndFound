@@ -111,7 +111,7 @@ function HomeComponent() {
                 name = "Water bottle" 
                 type = "Stationary" 
                 description = "Model: qc 35, black"
-                flag = "0"
+                flag = "3"
                 id = "/"
                 />
                   </div>
