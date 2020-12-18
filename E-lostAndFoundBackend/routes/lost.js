@@ -43,7 +43,7 @@ const storage = multer.diskStorage({
         typeob: req.body.typeob,
         descp: req.body.descp,
         productImage: {
-            data: fs.readFileSync(path.join('D:/5th sem project/E-LostandFound/E-LostAndFound/E-lostAndFoundBackend/' + '/public/' + req.file.filename)),
+            data: fs.readFileSync(path.join('D:/5th sem project/Project/E-LostAndFound/E-lostAndFoundBackend/' + '/public/' + req.file.filename)),
             contentType: 'image/png'
         }
       });

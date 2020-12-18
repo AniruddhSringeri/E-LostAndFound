@@ -7,7 +7,8 @@ import auth from "../middleware/auth.js"
 
 import User from '../models/User.js'
 
-import {OAuth2Client} from "google-auth-library"
+import pkg from "google-auth-library";
+const {OAuth2Client} = pkg;
 const CLIENT_ID = "337044747904-ajjq5h0hp7ijobge2a8j6ulqachn52j5.apps.googleusercontent.com"
 const client = new OAuth2Client(CLIENT_ID);
 
