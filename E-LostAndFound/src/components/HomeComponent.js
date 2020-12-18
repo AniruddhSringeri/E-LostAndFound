@@ -8,6 +8,7 @@ import './homeComponent.css'
 import ItemCard from './ItemCard.js'
 import img1 from '../images/carousel-1.PNG'
 import img2 from '../images/carousel-2.PNG'
+import { connect } from "react-redux"
 //import img3 from '../images/carousel-3.PNG'
 const items = [
   {
@@ -27,7 +28,7 @@ const items = [
   }
 ];
 
-function HomeComponent() {
+function HomeComponent(props) {
     const history = useHistory()
     const [loggedIn, setLoggedIn] = useState(false)
 
@@ -79,12 +80,15 @@ function HomeComponent() {
                   <div className="welcome col-md-12">
                     <h1>Welcome!</h1><br />
                     <h2>This is the place to find your lost item, or to report a found item.</h2><br />
+                    {!props.isAuthenticated? 
+                    <div>
                     <h3 className="">First, login to your BMSCE account. If you don't have an account, sign-up below.</h3>
                     <ButtonGroup size="lg col-12 col-md-6">
                       <Button className = "button-login-signup" color="primary" onClick={() => {history.push("/signup")}}>Sign-up</Button>
                       <Button className = "button-login-signup" color="primary" onClick={() => {history.push("/login")}}>Login</Button>
                     </ButtonGroup>
-                  </div>
+                  </div> : null}
+                    </div>
                   <div className="login-signup">
                     <Row>
                         <Col md="6">
@@ -141,4 +145,13 @@ function HomeComponent() {
     )
 }
 
-export default HomeComponent
+function mapStateToProps(state){
+  if(state.auth){
+    return {
+        isAuthenticated: state.auth.isAuthenticated
+    }
+  }
+  else return {}
+}
+
+export default connect(mapStateToProps, {})(HomeComponent);

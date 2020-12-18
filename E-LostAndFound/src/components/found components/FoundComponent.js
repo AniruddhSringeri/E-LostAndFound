@@ -51,7 +51,7 @@ function FoundComponent(props){
             return(
                 
                 <Col sm = "12" md = "6" xl = "3" lg = "4">
-                    <ItemCard key = {found._id} name = {""} img = {base64} type = {found.typeob} desc = {found.descp} id = {found._id} flag = {0}/>
+                    <ItemCard key = {found._id} name = {found.name} img = {base64} type = {found.typeob} desc = {found.descp} id = {found._id} flag = {0}/>
                 </Col>
             ); 
     }); 

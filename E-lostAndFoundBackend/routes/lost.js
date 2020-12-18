@@ -40,7 +40,6 @@ const storage = multer.diskStorage({
         name: req.body.name,
         email: req.body.email,
         place: req.body.place,
-        itemName: req.body.itemName,
         typeob: req.body.typeob,
         descp: req.body.descp,
         productImage: {

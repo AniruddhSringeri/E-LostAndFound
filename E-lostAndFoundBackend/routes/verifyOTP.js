@@ -26,7 +26,7 @@ router.post('/', (req,res) => {
                 res.status(200).json({msg:'Correct otp'})
             }
             else{
-                res.status(400).json({msg:'Wrong wrong wrong'})
+                res.status(400).json({msg:'\tWrong OTP, try again'})
             }
         }
     })

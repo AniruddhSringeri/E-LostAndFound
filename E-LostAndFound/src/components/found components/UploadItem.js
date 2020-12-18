@@ -163,17 +163,17 @@ function Step1(props) {
         value={props.email}
         onChange={props.handleChange}
         />
-      <label htmlFor="name">Your Name</label>
+      <label htmlFor="name">Item Name</label>
           <input
             className="form-control"
             id="name"
-            placeholder='Your Name'
+            placeholder='Item Name'
             type='text'
             name = "name"
             onChange={props.handleChange}
             value={props.name}
           />
-        <label htmlFor="place">Where you lost it?</label>
+        <label htmlFor="place">Where you found it?</label>
           <input
             className="form-control"
             id="place"

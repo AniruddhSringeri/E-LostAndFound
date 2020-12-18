@@ -36,8 +36,8 @@ function ItemCard(props) {
         <CardImg top width="100%" src = {`data:image/png;base64,${props.img}`} alt="Card image cap"/>
         <CardBody>
           <CardTitle>{props.name}</CardTitle>
-          <CardSubtitle>{props.type}</CardSubtitle>
-          <CardText>{props.desc}</CardText>
+          <CardSubtitle> {props.type}</CardSubtitle>
+          {/* <CardText>Description: {props.desc}</CardText> */}
           
           <Button onClick = {() => history.push(`/${props.flag==0? "found": "lost"}/${props.id}`)}>{props.flag == 0 ? "Claim":"Already Found"}</Button>
         </CardBody>

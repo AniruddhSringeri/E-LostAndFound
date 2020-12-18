@@ -51,7 +51,7 @@ function LostComponent(props){
             return(
                 
                 <Col sm = "12" md = "6" xl = "3" lg = "4">
-                    <ItemCard key = {lost._id} name = {""} img = {base64} type = {lost.typeob} desc = {lost.descp} id = {lost._id} flag = {1}/>
+                    <ItemCard key = {lost._id} name = {lost.name} img = {base64} type = {lost.typeob} desc = {lost.descp} id = {lost._id} flag = {1}/>
                 </Col>
             ); 
     }); 

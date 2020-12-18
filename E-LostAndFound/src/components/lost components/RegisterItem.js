@@ -166,11 +166,11 @@ function Step1(props) {
         value={props.email}
         onChange={props.handleChange}
         />
-      <label htmlFor="name">Your Name</label>
+      <label htmlFor="name">Name</label>
           <input
             className="form-control"
             id="name"
-            placeholder='Your Name'
+            placeholder='Item Name'
             type='text'
             name = "name"
             onChange={props.handleChange}
@@ -200,16 +200,6 @@ function Step2(props) {
       <Label>Picture of Item (If it is there!)</Label>
       <input type="file" name="file" onChange={props.handleChange}/>
       </div>
-      <label htmlFor="place">Name of the item</label>
-          <input
-            className="form-control"
-            id="itemName"
-            placeholder='Item Name'
-            type='text'
-            name = "itemName"
-            onChange={props.handleChange}
-            value={props.itemName}
-        />
       <Label>Enter Date and Time when you have lost this item (approx.)</Label>
       <Datetime />
     </div>

@@ -93,49 +93,50 @@ function ItemDetails(props){
     }
    if(props.flag == 0){
     return ( 
-        <div className="container">
-            <div className="row">
-            <div className="col col-md-6" style = {{padding:"4rem"}}>
+        <div className="container" align = "center">
+            
+            
             <Card>
                 <CardImg top src={`data:image/png;base64,${base64}`} width="100%" alt={ItemData.name}/>
                 <CardBody>
                     <CardTitle>Name: {ItemData.name}</CardTitle>
-                    <CardText>{ItemData.desp}</CardText>
+                    <CardText>{ItemData.descp}</CardText>
                     <CardText>Type: {ItemData.typeob}</CardText>
                     <CardText>Are you sure that this is your item?</CardText>
                     <Button onClick = {handleClaim} color = "danger">Yes, Claim</Button>
                 </CardBody>
             </Card>
-            </div>
-            </div>
+            
+            
         </div>
     )
    }
    else{
        return (
-        <div className="container">
-        <div className="row">
-        <div className="col col-md-6" style = {{padding:"4rem"}}>
+        <div className="container" align = "center">
+        
         <Card>
             <CardImg top src={`data:image/png;base64,${base64}`} width="100%" alt={ItemData.name}/>
             <CardBody>
                 <CardTitle>Name: {ItemData.name}</CardTitle>
-                <CardText>{ItemData.desp}</CardText>
                 <CardText>Type: {ItemData.typeob}</CardText>
+                <CardText>Description: {ItemData.descp}</CardText>
                 <CardText>Are you sure you have found this item?</CardText>
                 <Button onClick={handleFound}>Yes</Button>
             </CardBody>
         </Card>
-        </div>
-        </div>
+        
     </div>
        )
    }
 }
 function mapStateToProps(state){
-    return {
-        userEmail: state.auth.user.email
+    if(state.auth.user){
+        return {
+            userEmail: state.auth.user.email
+        }
     }
+    return {}
 }
 
 export default connect(mapStateToProps, {})(ItemDetails);

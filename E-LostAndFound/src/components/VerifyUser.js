@@ -2,9 +2,11 @@ import axios from '../axios'
 import React, { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Alert } from "reactstrap"
 function VerifyUser(props) {
 
     const [otp, setOTP] = useState()
+    const [msg, setMsg] = useState()
     const history = useHistory()
 
     function handleSubmit(event){
@@ -14,7 +16,11 @@ function VerifyUser(props) {
           .then(res => {
             history.push('/')  
             console.log(res)})
-          .catch(err => console.log(err.response))
+          .catch(err => {
+              setMsg(err.response.data.msg)
+              console.log(err.response)
+          })
+          
     }
 
     function handleChange(event){
@@ -23,7 +29,7 @@ function VerifyUser(props) {
 
     return (
         <div align = "center">
-            
+            { msg? <Alert color="danger">{ msg }</Alert>: null}
             <form >
                 <h1 style = {{color: "blue"}}>Enter otp</h1>
                 <input value = {otp} onChange = {handleChange} type = "text" placeholder = "OTP"/>

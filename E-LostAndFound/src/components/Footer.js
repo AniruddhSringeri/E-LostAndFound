@@ -17,14 +17,14 @@ function Footer(props) {
                 </div>} */}
                 <div className="footer-info">
                     <h5>Our Address</h5>
-                    <address>
-		              BMS College of Engineering<br />
-		              Basavanagudi<br />
-		              Bangalore<br />
-		              <i className="fa fa-phone fa-lg"></i>:  1234 5678<br />
-		              <i className="fa fa-fax fa-lg"></i>:  8765 4321<br />
-		              <i className="fa fa-envelope fa-lg"></i>: <a href="mailto:abc@gmail.com">
-                         abc@gmail.com</a>
+                    <address>BMS College of Engineering<br></br>
+                    P.O. Box No.: 1908, Bull Temple Road,<br></br>
+                    Bangalore - 560 019
+                    Karnataka, India.<br></br>
+		              <i></i>Ph: 8095352841<br />
+		              <i ></i>Ph: 9381091844<br />
+		              <i></i>Mail: <a href="mailto:elostfound204@gmail.com">
+                          elostfound204@gmail.com</a>
                     </address>
                 </div>
                 {/* {<div className="col-12 col-sm-4 align-self-center">
