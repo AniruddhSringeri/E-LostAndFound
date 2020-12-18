@@ -51,7 +51,7 @@ function FoundComponent(props){
             return(
                 
                 <Col sm = "12" md = "6" xl = "3" lg = "4">
-                    <ItemCard key = {found._id} name = {""} img = {base64} type = {found.typeob} desc = {found.descp} id = {found._id} flag = {1}/>
+                    <ItemCard key = {found._id} name = {""} img = {base64} type = {found.typeob} desc = {found.descp} id = {found._id} flag = {0}/>
                 </Col>
             ); 
     }); 
@@ -63,8 +63,8 @@ function FoundComponent(props){
             <Route exact path = "/found">
                 <div className = "Lost">
                     <Intro 
-                    name = "Lost" 
-                    description = "Here you will find the list of items that have been found. If you can't find your lost item, you can upload the details of that item and we will get back to you if someone finds it"
+                    name = "Found" 
+                    description = "Here you will find the list of items that have been found. If you found an item, upload it here or check if it has already been registered as lost in the lost page"
                     />
 
                     <UploadItem />

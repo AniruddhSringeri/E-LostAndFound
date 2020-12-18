@@ -4,6 +4,7 @@ import { Button,Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap"
 import axios from '../../axios'
 import RegisterItemAgain from "./RegisterItemAgain";
 import UploadItemAgain from "./UploadItemAgain";
+import { connect } from "react-redux"
 
 function bufferToBase64(buf) {
     var binstr = Array.prototype.map.call(buf, function (ch) {
@@ -67,6 +68,14 @@ function ItemDetails(props){
    // console.log(ItemData)
     //src={`data:image/png;base64,${base64}`}
     */
+
+    function handleConfirm(event){
+        event.preventDefault()
+        axios.post("/confirm", {
+            userEmail: props.userEmail,
+            toEmail: ItemData.email,
+        })
+    }
     return ( 
         <div className="container">
             <div className="row">
@@ -77,7 +86,8 @@ function ItemDetails(props){
                     <CardTitle>Name: {ItemData.name}</CardTitle>
                     <CardText>{ItemData.desp}</CardText>
                     <CardText>Type: {ItemData.typeob}</CardText>
-                    <CardText>{ItemData.flag == 0 ? <RegisterItemAgain/> : <UploadItemAgain/>}</CardText>
+                    <CardText>Are you sure this is yours? Claiming an item that is not yours will result in severe cosequences</CardText>
+                    <Button onclick = {handleConfirm} color = "danger">Yes it is mine</Button>
                 </CardBody>
             </Card>
             </div>
@@ -86,4 +96,10 @@ function ItemDetails(props){
     )
 }
 
-export default ItemDetails;
+function mapStateToProps(state){
+    return{
+        userEmail: state.auth.user.email
+    }
+}
+
+export default connect(mapStateToProps, {})(ItemDetails);

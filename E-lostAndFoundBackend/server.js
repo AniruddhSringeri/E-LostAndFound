@@ -9,6 +9,7 @@ import signup from './routes/signup.js'
 import login from './routes/login.js'
 import googlelogin from './routes/googlelogin.js'
 import verifyOTP from './routes/verifyOTP.js'
+import confirm from './routes/confirm.js'
 
 // App Config
 const app = express();
@@ -37,6 +38,8 @@ app.use('/login', login)
 app.use('/googlelogin', googlelogin)
 
 app.use('/verifyOTP', verifyOTP)
+
+app.use('/confirm', confirm)
 
 
 // API Endpoints

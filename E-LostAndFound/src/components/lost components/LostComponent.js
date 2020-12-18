@@ -64,12 +64,12 @@ function LostComponent(props){
                 <div className = "Lost">
                     <Intro 
                     name = "Lost" 
-                    description = "Here you will find the list of items that have been found. If you can't find your lost item, you can upload the details of that item and we will get back to you if someone finds it"
+                    description = "Here you will find the list of items that have been registered as lost. Before uploading, check if your item is present in the found page "
                     />
 
                     <RegisterItem />
                     <hr />
-                    <h3 align = "center" style = {{fontSize:"3rem"}}>Found items</h3>
+                    <h3 align = "center" style = {{fontSize:"3rem"}}>Lost items</h3>
                     <br/>
                     <Map />
                     <Container className="themed-container">
