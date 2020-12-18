@@ -4,7 +4,6 @@ import { Button,Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap"
 import axios from '../../axios'
 import RegisterItemAgain from "./RegisterItemAgain";
 import UploadItemAgain from "./UploadItemAgain";
-import { connect } from "react-redux"
 
 function bufferToBase64(buf) {
     var binstr = Array.prototype.map.call(buf, function (ch) {
@@ -23,18 +22,21 @@ function ItemDetails(props){
         console.log("aaa")
         async function fetchData(){
             if(props.flag == 0){
+                console.log("sada")
                 await axios.get(`/found/${id}`)
                 .then(res => {
                     setItemData(res.data)
+                    setImage(res.data.productImage.data.data)
                 })
             }
             else{
+                console.log("saaa")
                 await axios.get(`/lost/${id}`)
                 .then(res => {
                     setItemData(res.data)
-                    console.log(res.data)
+                   // console.log(res.data)
                     setImage(res.data.productImage.data.data)
-                    console.log(ItemData)
+                    //console.log(ItemData)
                 })
                 .then(() =>{
                     console.log("bbbb");
@@ -50,11 +52,11 @@ function ItemDetails(props){
         
 
     }, [])
-    console.log(ItemData)
-    console.log(image)
+   // console.log(ItemData)
+   // console.log(image)
     var flag = new Uint8Array(image);
     var base64 = bufferToBase64(flag)
-    console.log(base64);
+   // console.log(base64)
 /*
     useEffect(() => {
         console.log("bbbb");
@@ -68,14 +70,6 @@ function ItemDetails(props){
    // console.log(ItemData)
     //src={`data:image/png;base64,${base64}`}
     */
-
-    function handleConfirm(event){
-        event.preventDefault()
-        axios.post("/confirm", {
-            userEmail: props.userEmail,
-            toEmail: ItemData.email,
-        })
-    }
     return ( 
         <div className="container">
             <div className="row">
@@ -86,8 +80,7 @@ function ItemDetails(props){
                     <CardTitle>Name: {ItemData.name}</CardTitle>
                     <CardText>{ItemData.desp}</CardText>
                     <CardText>Type: {ItemData.typeob}</CardText>
-                    <CardText>Are you sure this is yours? Claiming an item that is not yours will result in severe cosequences</CardText>
-                    <Button onclick = {handleConfirm} color = "danger">Yes it is mine</Button>
+                    <CardText>{ItemData.flag == 0 ? <RegisterItemAgain/> : <UploadItemAgain/>}</CardText>
                 </CardBody>
             </Card>
             </div>
@@ -96,10 +89,4 @@ function ItemDetails(props){
     )
 }
 
-function mapStateToProps(state){
-    return{
-        userEmail: state.auth.user.email
-    }
-}
-
-export default connect(mapStateToProps, {})(ItemDetails);
+export default ItemDetails;

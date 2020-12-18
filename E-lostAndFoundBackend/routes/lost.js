@@ -40,6 +40,7 @@ const storage = multer.diskStorage({
         name: req.body.name,
         email: req.body.email,
         place: req.body.place,
+        itemName: req.body.itemName,
         typeob: req.body.typeob,
         descp: req.body.descp,
         productImage: {
@@ -93,6 +94,7 @@ const storage = multer.diskStorage({
                 res.status(500).send(err)
             }
             else{
+                console.log("sds")
                 res.status(200).send(data[0])
             }
         })

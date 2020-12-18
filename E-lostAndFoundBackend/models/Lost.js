@@ -6,6 +6,7 @@ const productSchema = mongoose.Schema({
     name: { type: String },
     email: {type: String},
     place: { type: String },
+    itemName: {type: String},
     typeob: {type: String},
     descp: {type: String},
     productImage: { data: Buffer }

@@ -85,7 +85,7 @@ function FoundComponent(props){
                 </div>
             </Route>
             <Route path = "/found/:id">
-                <ItemDetails flag = {1}/>
+                <ItemDetails flag = {0}/>
             </Route>
         </Switch>
     )

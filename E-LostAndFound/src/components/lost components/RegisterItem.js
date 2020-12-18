@@ -17,6 +17,7 @@ class RegisterItem extends React.Component {
       email:  '',
       name: '',
       place:'',
+      itemName:'',
       dateTime: '',
       typeob: '',
       descp: '',
@@ -45,6 +46,7 @@ class RegisterItem extends React.Component {
     data.append('email', this.state.email);
     data.append('name', this.state.name);
     data.append('place', this.state.place);
+    data.append('itemName', this.state.itemName)
     data.append('dateTime', this.state.dateTime);
     data.append('typeob', this.state.typeob);
     data.append('descp', this.state.descp);
@@ -127,6 +129,7 @@ return null;
             currentStep={this.state.currentStep} 
             handleChange={this.onChangeHandler}
             selectedFile={this.state.selectedFile}
+            itemName={this.state.itemName}
             dateTime={this.state.dateTime}
           />
           <Step3 
@@ -197,6 +200,16 @@ function Step2(props) {
       <Label>Picture of Item (If it is there!)</Label>
       <input type="file" name="file" onChange={props.handleChange}/>
       </div>
+      <label htmlFor="place">Name of the item</label>
+          <input
+            className="form-control"
+            id="itemName"
+            placeholder='Item Name'
+            type='text'
+            name = "itemName"
+            onChange={props.handleChange}
+            value={props.itemName}
+        />
       <Label>Enter Date and Time when you have lost this item (approx.)</Label>
       <Datetime />
     </div>
