@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from "react";
+import React, { useContext } from "react";
 
 import {Link} from "react-router-dom";
 import {Container, Row, Col, NavbarBrand, Navbar} from "reactstrap";
@@ -7,13 +7,11 @@ import { Nav, NavItem, NavLink, NavbarToggler, Collapse } from 'reactstrap';
 import './header.css'
 import { connect } from 'react-redux'
 import { logout } from '../actions/authActions'
-
+import useToggler from "./useToggler"
+import {ThemeContext} from "./themeContext" 
 function Header(props) {
-
-    const [isNavOpen, setisNavOpen] = useState(false);
-    function toggleNav() {
-        setisNavOpen( prevState =>  !prevState)
-    }
+    const [isNavOpen, toggleNav] = useToggler(false);
+    const {theme, toggleTheme} = useContext(ThemeContext)
     const guestLinks = 
     <Navbar dark expand="md">
             <NavbarToggler onClick={toggleNav} />
@@ -68,6 +66,7 @@ function Header(props) {
                     <span className="navbar-text">
                         {props.auth.user? `Welcome ${props.auth.user.name}` : null}
                     </span>
+                    <button onClick = {toggleTheme}>{theme} theme</button>
                 </Col>
             </Row>
             

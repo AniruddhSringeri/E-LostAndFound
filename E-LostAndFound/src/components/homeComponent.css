@@ -42,21 +42,10 @@ h2 {
 .welcome h3 {
     color:white;
 }
-
-.card{
-    border: solid 2px green;
-    background-color: rgb(215, 225, 233) !important;
-    border-width: 1px;
-    margin: 1.6em auto;
-    max-width: 26em;
-}
-
-
-
-.card > h1 {
-    color:purple;
-}
   
+.HomepageCard{
+    color:black;
+}
 
 .button-login-signup {
     font-weight: bold;
@@ -64,7 +53,6 @@ h2 {
     padding-left:0.2em !important;
     padding-right:0.2em !important;
     box-shadow: 0em 0em 0.03em 0.05em aqua !important;
-
 }
 
 .button-lost-found {

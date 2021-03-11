@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 import { connect } from 'react-redux'
 import { Alert } from "reactstrap"
+import "./verifyUser.css"
 function VerifyUser(props) {
 
     const [otp, setOTP] = useState()
@@ -30,8 +31,9 @@ function VerifyUser(props) {
     return (
         <div align = "center">
             { msg? <Alert color="danger">{ msg }</Alert>: null}
-            <form >
-                <h1 style = {{color: "blue"}}>Enter otp</h1>
+            <form className = "verify-otp" >
+                <h1>An otp has been sent to your mail, please enter it here to confirm your mail id</h1>
+                <h2>Enter otp</h2>
                 <input value = {otp} onChange = {handleChange} type = "text" placeholder = "OTP"/>
                 <button onClick = {handleSubmit}>Submit</button>
             </form>

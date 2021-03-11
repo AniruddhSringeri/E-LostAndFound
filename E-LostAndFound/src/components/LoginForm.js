@@ -99,25 +99,25 @@ function LoginForm(props){
                     </FormGroup>
                     <FormGroup>
                         <Label for="examplePassword">Password</Label>
-                        <Input type="password" name = "password" onChange = {handleChange} value = {password} placeholder="password placeholder" />
+                        <Input type="password" name = "password" onChange = {handleChange} value = {password} placeholder="password" />
                     </FormGroup>
                     <Button color="success" onClick = {handleSubmit}>Log in</Button>
+                    
+                    <hr className="hr-text" dataContent="or connect with" />
+                    <GoogleLogin
+                        clientId="337044747904-ajjq5h0hp7ijobge2a8j6ulqachn52j5.apps.googleusercontent.com"
+                        buttonText="Login"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                    />
                 </Form>
-                <GoogleLogin
-                    clientId="337044747904-ajjq5h0hp7ijobge2a8j6ulqachn52j5.apps.googleusercontent.com"
-                    buttonText="Login"
-                    onSuccess={responseGoogle}
-                    onFailure={responseGoogle}
-                    cookiePolicy={'single_host_origin'}
-                />
-                <GoogleLogout
+                {/* <GoogleLogout
                     clientId="337044747904-ajjq5h0hp7ijobge2a8j6ulqachn52j5.apps.googleusercontent.com"
                     buttonText="Logout"
                     onLogoutSuccess={logout}
-                >
-                </GoogleLogout>
-                <h1>{name}</h1>
-                <h2></h2>
+                    > 
+                    </GoogleLogout>*/}
             
                 </div>
                 </div>

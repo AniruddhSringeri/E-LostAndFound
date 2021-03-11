@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "../ItemCard";
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Spinner } from 'reactstrap';
 //import ItemsData from "./ItemsData";
 import Intro from "../Intro";
 import {Switch, Route, useParams, useLocation, useHistory} from "react-router-dom";
@@ -22,14 +22,13 @@ function bufferToBase64(buf) {
 function LostComponent(props){
 
     const [ItemsData, setItemsData] = useState([])
+    const [fetchingItems, setFetchingItems] = useState(false)
 
     useEffect(() => {
-        console.log(props)
-    
-
+        setFetchingItems(true)
         async function fetchData(){
             const req = await axios.get('/lost')
-
+            setFetchingItems(false)
             setItemsData(req.data)
         }
 
@@ -72,6 +71,7 @@ function LostComponent(props){
                     <h3 align = "center" style = {{fontSize:"3rem"}}>Lost items</h3>
                     <br/>
                     <Map />
+                    {fetchingItems && <p align = {"center"}><Spinner color="primary" /> Loading Items....</p>}
                     <Container className="themed-container">
                         <Row>
                             {items}

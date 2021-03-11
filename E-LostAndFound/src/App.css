@@ -3,7 +3,16 @@ body{
   display: flex;
   flex-direction: column;
   font-family: arial;
-  color: rgb(123, 123, 197);
+}
+
+.dark{
+  background-color: black;
+  color: white;
+}
+
+.light{
+  background-color: white;
+  color:black
 }
 
 .intro > h1 {

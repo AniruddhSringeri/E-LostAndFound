@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { Button,Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import { Button,Card, CardImg, CardText, CardBody, CardTitle, Alert } from "reactstrap";
 import axios from '../../axios'
 import RegisterItemAgain from "./RegisterItemAgain";
 import UploadItemAgain from "./UploadItemAgain";
@@ -17,6 +17,7 @@ function ItemDetails(props){
 
     const [ItemData, setItemData] = useState({})
     const [image, setImage] = useState({});
+    const [msg, setMsg] = useState();
 
 
     useEffect(() => {
@@ -78,7 +79,8 @@ function ItemDetails(props){
             lostEmail: ItemData.email,
             foundEmail: props.userEmail
         })
-        .then(res => console.log(res))
+        .then(res => {console.log(res)
+                setMsg("The person who had lost this item has been notified. Check your mail for more details")})
         .catch(err => console.log(err))
     }
 
@@ -90,6 +92,7 @@ function ItemDetails(props){
         })
         .then(res => console.log(res))
         .catch(err => console.log(err))
+        setMsg("The person who found the item has been notified. Check your mail for more details")
     }
    if(props.flag == 0){
     return ( 
@@ -106,7 +109,7 @@ function ItemDetails(props){
                     <Button onClick = {handleClaim} color = "danger">Yes, Claim</Button>
                 </CardBody>
             </Card>
-            
+            { msg? <Alert color="success">{ msg }</Alert>: null}
             
         </div>
     )
@@ -125,7 +128,7 @@ function ItemDetails(props){
                 <Button onClick={handleFound}>Yes</Button>
             </CardBody>
         </Card>
-        
+        { msg? <Alert color="success">{ msg }</Alert>: null}
     </div>
        )
    }

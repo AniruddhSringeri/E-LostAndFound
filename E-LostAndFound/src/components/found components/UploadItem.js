@@ -110,7 +110,7 @@ return null;
         <ModalHeader toggle={this.toggleModal}>Register a Found item</ModalHeader>
         <ModalBody>
         <React.Fragment>
-        <h1>Register an item you have found!</h1>
+        <h1 style = {{color:"rgb(123, 123, 197"}}>Register an item you have found!</h1>
         <p>Step {this.state.currentStep} </p> 
         <Form model="registerFoundItem" encType="multipart/form-data">
           {/* 
